@@ -1,10 +1,12 @@
 import smtplib;
+userName = os.environ.get("EMAIL_User_Name")
+password = os.environ.get("Email_Pass")
 with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
     smtp.ehlo()
     smtp.starttls()
     smtp.ehlo()
 
-    smtp.login("mmanzicder@gmail.com", "Muman123@!")
+    smtp.login(userName, password)
 
     subject = "Email send testing!!!"
     body = "Hi this is mail transferring with Python"
